@@ -11,7 +11,7 @@ export const Header = () => {
                   <Link to="/">
                     <h3 className="is-marginless">
                       <span className={styles.logo}>S</span>
-                      <span style={{ color: 'white'}}>uper heros</span>
+                      <span style={{ color: 'white'}}>uper Heros</span>
                     </h3>
                   </Link>
                 </div>
