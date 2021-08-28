@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import {FavoriteStore} from "../models/FavoriteStore";
-import {fetchHeroesById} from "../sevices/fetch-heroes-by-id";
+import {fetchHeroesById} from "../services/fetch-heroes-by-id";
 import {HeroItem} from "../components/HeroItem/HeroItem";
 
 export default function Favorites() {
