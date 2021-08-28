@@ -20,7 +20,6 @@ export default function Hero() {
       })
       .catch(() => setLoading(false))
   }, [id]);
-console.log(hero)
   return (
     <div className={styles.heroWrap}>
       <div className={styles.heroTitle}><h2>{hero.name}</h2></div>
