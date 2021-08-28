@@ -1,0 +1,36 @@
+.appearanceAttribute {
+    display: flex;
+    flex-direction: row;
+    margin: 4px 8px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    border-radius: 4px;
+    position: relative;
+    transition: all .3s ease-out;
+    strong{
+      padding: 5px 10px;
+    }
+    &:hover{
+      background: #34495e;
+      color: #fff;
+      transition: all .2s ease-out;
+      .appearanceAttributeLabel{
+        background: #fff;
+        color: #34495e;
+        transition: all .2s ease-out;
+      }
+      span{
+        visibility: visible;
+        transition: all .2s ease-out;
+      }
+    }
+  }
+  
+  .appearanceAttributeLabel {
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px; 
+    background: #34495e;
+    transition: all .2s ease-out;
+  }
+  
