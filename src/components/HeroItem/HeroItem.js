@@ -7,8 +7,7 @@ import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './HeroItem.module.scss';
-import { Appearance } from '../HeroAttributes/Appearance/Appearance';
-import { PowerStats } from '../HeroAttributes/PowerStats/PowerStats';
+import { PowerStats } from "../HeroAttributes";
 
 export const HeroItem = props => {
   const { hero, favorite, onFavorite,  } = props;
@@ -29,7 +28,6 @@ export const HeroItem = props => {
         </div>
       </Link>
       <div className={styles.heroAttributes}> 
-        <Appearance appearance={hero.appearance} />
         <PowerStats power={hero.powerstats} />
       </div>
       {

@@ -2,7 +2,6 @@ import React from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBatteryFull, faBrain, faDumbbell, faFistRaised, faTachometerAlt} from "@fortawesome/free-solid-svg-icons";
 import styles from "./PowerStats.module.scss";
-import classNames from "classnames";
 
 const PowerStatsItem = props => {
   const { label, value, icon } = props;

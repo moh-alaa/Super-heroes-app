@@ -74,8 +74,6 @@ export const HeroesSlider = () => {
           setError(true)
         }
         setLoading(false)
-				console.log(data)
-			console.log(success)
       })
 			
   }, [])
