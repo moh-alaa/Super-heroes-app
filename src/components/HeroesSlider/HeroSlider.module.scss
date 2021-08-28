@@ -1,0 +1,49 @@
+.heroConfig {
+    width: 300px;
+    margin: 0 0 0 auto;
+    background-color: #ecf0f1;
+    padding: 4px 16px;
+    border-bottom-left-radius: 8px;
+    > div {
+      margin: 4px;
+      text-align: center;
+    }
+  }
+  
+  .slide {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #ecf0f1;
+    justify-content: center;
+  }
+  
+  .slideImage {
+    margin: auto;
+    height: 300px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+  }
+  
+  .heroInfo {
+    flex: 1;
+    margin: 16px;
+    padding: 64px;
+    text-align: center;
+  }
+  
+  .slideImageWrap {
+  
+  }
+  
+  .heroTitle {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .heroAttributes {
+    margin: auto;
+  }
+  
