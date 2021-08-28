@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import {fetchPaginatedHeroes} from "../../sevices/fetch-paginated-heroes";
+import {fetchPaginatedHeroes} from "../../services/fetch-paginated-heroes";
 import {HeroItem} from "../HeroItem/HeroItem";
 import {OrderHeroesDropdown} from "./OrderHeroesDropdown";
 import {FavoriteStore} from "../../models/FavoriteStore";
