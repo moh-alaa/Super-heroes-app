@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+// if (process.env.NODE_ENV !== 'production') {
+  // import ('./server');
+// }
 
 ReactDOM.render(
   <React.StrictMode>
