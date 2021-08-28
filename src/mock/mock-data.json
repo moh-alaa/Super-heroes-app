@@ -1,4 +1,4 @@
-const MOCK_DATA = [
+[
     {
         "response": "success",
         "id": "1",
@@ -1002,5 +1002,3 @@ const MOCK_DATA = [
         }
     }
 ]
-
-export default MOCK_DATA;
