@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import classNames from "classnames";
-import { fetchPaginatedHeroes } from "../../services/fetch-paginated-heros";
-import HeroSlide, { heroSlide } from "./HeroSlide";
-import styles from "./HeroSlider.module.scss";
+import classNames from 'classnames';
+import {fetchPaginatedHeroes} from "../../services/fetch-paginated-heroes";
+import {HeroSlide} from "./HeroSlide";
+import styles from './HeroSlider.module.scss';
 
-const heroConfigControls = (props) => {
-  const { heroConfig, onChange } = props;
+const HeroConfigControls = props => {
+  const { heroConfig, onChange } = props
 
   const handleChange = (event) => {
     const { name, checked } = event.target;
-    onChange(name, checked);
+    onChange(name, checked)
   };
 
   return (
-    <div className={classNames("flex", styles.heroConfig)}>
+    <div className={classNames('flex', styles.heroConfig)}>
       <div>
         <p>Appearance</p>
         <input
@@ -43,8 +43,8 @@ const heroConfigControls = (props) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const HeroesSlider = () => {
   const [loading, setLoading] = useState(false);
@@ -61,58 +61,62 @@ export const HeroesSlider = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToScroll: 1
   };
 
   useEffect(() => {
-    setLoading(true);
-    fetchPaginatedHeroes(1, 9).then(({ data, sucess }) => {
-      if (sucess) {
-        setHeroes(data);
-      } else {
-        setError(true);
-      }
-      setLoading(false);
-    });
-  }, []);
+    setLoading(true)
+    fetchPaginatedHeroes(1, 9)
+      .then(({ data, success}) => {
+        if (success) {
+          setHeroes(data)
+        } else {
+          setError(true)
+        }
+        setLoading(false)
+				console.log(data)
+			console.log(success)
+      })
+			
+  }, [])
 
-	if(error) {
-		return (
-			<div>
-				<p>Something Went Wrong!</p>
-			</div>
-		)
-	}
+  if (error) {
+    return  (
+      <div>
+        <p>Something went wrong!</p>
+      </div>
+    )
+  }
 
-	if(loading){
-		// Add loading animation later
-		return <div>Loading...</div>
-	}
+  if (loading) {
+		// Adding animated loading later
+    return <div>Loading...</div>
+  }
 
-	return (
-		<div className="m-b-32">
-			<Slider {...settings}>
-				{
-					heroes.map(hero => {
-						return (
-							<HeroSlide 
-								key={`slide-${hero-id}`}
-								hero={hero}
-								heroConfig={heroConfig}
-							/>
-						)
-					})
-				}
-			</Slider>
-			<heroConfigControls 
-				heroConfig={heroConfig}
-				onChange={(name, checked) => setHeroConfig(() => {
-					return {
-						...heroConfig,
-						[name]: checked
-					}
-				})}
-			/>
-		</div>
-	)
-};
+  return (
+    <div className="m-b-32">
+      <Slider {...settings}>
+        {
+          heroes.map(hero => {
+            return (
+              <HeroSlide
+                key={`slide-${hero.id}`}
+                hero={hero}
+                heroConfig={heroConfig}
+              />
+            )
+          })
+        }
+      </Slider>
+      <HeroConfigControls
+        heroConfig={heroConfig}
+        onChange={(name, checked) => setHeroConfig(() => {
+          return {
+            ...heroConfig,
+            [name]: checked
+          }
+        })}
+      />
+    </div>
+  )
+}
