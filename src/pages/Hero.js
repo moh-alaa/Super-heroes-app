@@ -9,36 +9,33 @@ export default function Hero() {
   let { id } = useParams();
   const [loading, setLoading] = useState(false);
   const [hero, setHero] = useState();
-  //   console.log(hero, id)
 
   useEffect(() => {
     singleHero(id)
-      .then((res) => {
-        if (res) {
-          setHero(res);
-        } 
-        setLoading(false);
+        .then(({ success, data }) => {
+            if (success) {
+                setHero(data)
+            }
+            setLoading(false)
       })
-    // fetch(`/api/${id}`)
-    //     .then(res => setHero(res.json()))
-  });
+      .catch(() => setLoading(false))
+  }, [id]);
 console.log(hero)
   return (
-    <div>
-      <div className={styles.heroTitle}>{/* <h2>{hero.name}</h2> */}</div>
-      <div className={styles.slideImageWrap}>
-        {/* <img
-          className={styles.slideImage}
+    <div className={styles.heroWrap}>
+      <div className={styles.heroTitle}><h2>{hero.name}</h2></div>
+      <div className={styles.heroImage}>
+        <img
           src={hero.image.url}
           alt={hero.name}
-        /> */}
+        />
       </div>
 
-      {/* <div className={styles.heroInfo}>
+      <div className={styles.heroInfo}>
         <Bio biography={hero.biography} />
         <Appearance appearance={hero.appearance} />
         <PowerStats power={hero.powerstats} />
-      </div> */}
+      </div>
     </div>
   );
 }

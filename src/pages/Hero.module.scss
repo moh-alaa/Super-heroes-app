@@ -1,0 +1,16 @@
+.heroWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.heroImage{
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
