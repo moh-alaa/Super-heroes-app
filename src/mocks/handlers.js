@@ -17,7 +17,6 @@ export const handlers = [
     )
   }),
   rest.get('/api/:id', (req, res, ctx) => {
-    console.log('...fetching data')
     const { id } = req.params
     const hero = mockData.find(hero => hero.id === id);
     if (!hero) {
