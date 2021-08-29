@@ -11,6 +11,7 @@ export default function Hero() {
   const [hero, setHero] = useState();
 
   useEffect(() => {
+    setLoading(true)
     singleHero(id)
         .then(({ success, data }) => {
             if (success) {
@@ -19,22 +20,29 @@ export default function Hero() {
             setLoading(false)
       })
       .catch(() => setLoading(false))
-  }, [id]);
+  }, []);
+  
   return (
-    <div className={styles.heroWrap}>
-      <div className={styles.heroTitle}><h2>{hero.name}</h2></div>
-      <div className={styles.heroImage}>
-        <img
-          src={hero.image.url}
-          alt={hero.name}
-        />
-      </div>
+    <div className="container">
+      {loading && <p>Loading Hero...</p>}
+      {hero && (
+        <div className={styles.heroWrap}> 
+          <div className={styles.heroTitle}><h2>{hero.name}</h2></div>
+          <div className={styles.heroImage}>
+            <img
+              src={hero.image.url}
+              alt={hero.name}
+            />
+          </div>
 
-      <div className={styles.heroInfo}>
-        <Bio biography={hero.biography} />
-        <Appearance appearance={hero.appearance} />
-        <PowerStats power={hero.powerstats} />
-      </div>
+          <div className={styles.heroInfo}>
+            <Bio biography={hero.biography} />
+            <Appearance appearance={hero.appearance} />
+            <PowerStats power={hero.powerstats} />
+          </div>
+        </div>
+      )}
+      
     </div>
   );
 }
