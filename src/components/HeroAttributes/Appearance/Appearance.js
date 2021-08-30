@@ -27,17 +27,17 @@ export const Appearance = props => {
         )
       }
       {
-        appearance.race && (
+        appearance.race && appearance.race !== "null" &&(
           <AppearanceItem icon={faUsers} label="Race" value={appearance.race} />
         )
       }
       {
-        appearance.height && (
+        appearance.height && appearance.height[1] !== "0 cm" && (
           <AppearanceItem icon={faRulerVertical} label="Height" value={appearance.height[1]} />
         )
       }
       {
-        appearance.weight && (
+        appearance.weight && appearance.weight[1] !== "0 kg" &&(
           <AppearanceItem icon={faWeight} label="Weight" value={appearance.weight[1]} />
         )
       }
