@@ -4,9 +4,9 @@ A simple APP to show Super Heroes from superheroapi.com
 ## How to start
 1- Clone the project into your local.
 
-2- Run ```bash yarn install ```
+2- Run ``` yarn install ```
 
-3- After ```bash yarn start ```
+3- After ``` yarn start ```
 
 ## Note
 I haven't use .env to handle the API live/local URL. so no need to worry about it. the urls can be found in the [constants](https://github.com/moh-alaa/super-heroes-app/blob/main/src/utils/constants.js) file.
