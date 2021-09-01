@@ -29,7 +29,7 @@ export default function Favorites() {
       })
       .catch(() => setLoading(false))
 
-  }, []);
+  }, [heroes]);
 
   return (
     <div className="container">
@@ -44,7 +44,7 @@ export default function Favorites() {
       }
       <ul className="unstyled-list">
         {
-          heroes.map(hero => {
+          favorites.length !== 0 && heroes.map(hero => {
             const favorite = favorites.includes(hero.id);
             return (
               <HeroItem
